@@ -31,9 +31,9 @@ Ahbap Tekirdağ gönüllülerinin 2026 yılı etkinliklerini gösteren dinamik i
 ## Kullanım
 
 ### Canlı Site
-- Şubat 2026: [https://ahbap-tekirdag.github.io/ahbap-etkinlik-takvimi/](https://ahbap-tekirdag.github.io/ahbap-etkinlik-takvimi/)
-- Mart 2026: [https://ahbap-tekirdag.github.io/ahbap-etkinlik-takvimi/?ay=2026-mart](https://ahbap-tekirdag.github.io/ahbap-etkinlik-takvimi/?ay=2026-mart)
-- Nisan 2026: [https://ahbap-tekirdag.github.io/ahbap-etkinlik-takvimi/?ay=2026-nisan](https://ahbap-tekirdag.github.io/ahbap-etkinlik-takvimi/?ay=2026-nisan)
+- Şubat 2026: [https://ahbap-tekirdag.github.io/etkinlik-takvimi/](https://ahbap-tekirdag.github.io/etkinlik-takvimi/)
+- Mart 2026: [https://ahbap-tekirdag.github.io/etkinlik-takvimi/?ay=2026-mart](https://ahbap-tekirdag.github.io/etkinlik-takvimi/?ay=2026-mart)
+- Nisan 2026: [https://ahbap-tekirdag.github.io/etkinlik-takvimi/?ay=2026-nisan](https://ahbap-tekirdag.github.io/etkinlik-takvimi/?ay=2026-nisan)
 
 ### Yeni Ay Ekleme
 
@@ -80,7 +80,7 @@ Ahbap Tekirdağ gönüllülerinin 2026 yılı etkinliklerini gösteren dinamik i
 ## Dosya Yapısı
 
 ```
-ahbap-etkinlik-takvimi/
+etkinlik-takvimi/
 ├── index.html           # Ana sayfa
 ├── styles.css          # CSS stilleri
 ├── script.js           # JavaScript kodu
