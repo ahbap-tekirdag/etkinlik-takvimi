@@ -12,6 +12,7 @@ Ahbap Tekirdağ gönüllülerinin 2026 yılı etkinliklerini gösteren dinamik i
 - **28 Şubat** - Quiz Night: Emojilerle şarkı tahmin ve oyun gecesi
 
 ### Mart 2026
+- **1 Mart** - Quiz Night: Kahkaha, takım ruhu ve bol eğlencenin bir araya geldiği sosyal buluşma
 - **8 Mart** - Mart Bileklikleri Atölyesi: Kadınlar Günü'ne özel Martenitsa yapımı
 - **15 Mart** - Çiçek Ekimi & Yemek: Dünya Çiçek Ekimi Günü, tohum değiş tokuşu ve akşam yemeği
 - **28 Mart** - Tiyatro Gecesi: Dünya Tiyatro Günü'ne özel tiyatro izleme
@@ -31,7 +32,8 @@ Ahbap Tekirdağ gönüllülerinin 2026 yılı etkinliklerini gösteren dinamik i
 ## Kullanım
 
 ### Canlı Site
-- Şubat 2026: [https://ahbap-tekirdag.github.io/etkinlik-takvimi/](https://ahbap-tekirdag.github.io/etkinlik-takvimi/)
+- Güncel Ay (Otomatik): [https://ahbap-tekirdag.github.io/etkinlik-takvimi/](https://ahbap-tekirdag.github.io/etkinlik-takvimi/)
+- Şubat 2026: [https://ahbap-tekirdag.github.io/etkinlik-takvimi/?ay=2026-subat](https://ahbap-tekirdag.github.io/etkinlik-takvimi/?ay=2026-subat)
 - Mart 2026: [https://ahbap-tekirdag.github.io/etkinlik-takvimi/?ay=2026-mart](https://ahbap-tekirdag.github.io/etkinlik-takvimi/?ay=2026-mart)
 - Nisan 2026: [https://ahbap-tekirdag.github.io/etkinlik-takvimi/?ay=2026-nisan](https://ahbap-tekirdag.github.io/etkinlik-takvimi/?ay=2026-nisan)
 

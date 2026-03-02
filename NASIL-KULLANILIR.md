@@ -1,33 +1,74 @@
 # Ahbap Etkinlik Takvimi - Kullanım Kılavuzu
 
-Bu takvim sistemi, farklı Ahbap şehir gruplarının kolayca kullanabilmesi için tasarlanmıştır. Kod bilgisi gerektirmez, sadece `config.json` dosyasını düzenlemeniz yeterlidir.
+Bu takvim sistemi, farklı Ahbap şehir gruplarının kolayca kullanabilmesi için tasarlanmıştır. Kod bilgisi gerektirmez, sadece aylık JSON dosyalarını düzenlemeniz yeterlidir.
 
 ---
 
 ## Hızlı Başlangıç
 
 1. Bu repoyu kendi GitHub hesabınıza **fork** edin
-2. `config.json` dosyasını açın ve düzenleyin
+2. `data/` klasöründeki ay dosyalarını düzenleyin (örn: `2026-mart.json`)
 3. GitHub Pages'i etkinleştirin
 4. Takvim siteniz hazır!
 
 ---
 
-## config.json Dosyasını Düzenleme
+## Yeni Sistem: Aylık Dosyalar
 
-### Temel Ayarlar
+Artık her ay için ayrı bir JSON dosyası var. Bu sayede:
+- Farklı ayları kolayca yönetebilirsiniz
+- Geçmiş ve gelecek ayları arşivleyebilirsiniz
+- Takvim otomatik olarak bugünün ayını açar
+- Ok tuşları ile aylar arası geçiş yapabilirsiniz
+
+### Dosya İsimlendirme
+
+Format: `YILI-AY.json`
+
+Örnekler:
+- `2026-ocak.json`
+- `2026-subat.json`
+- `2026-mart.json`
+
+**Önemli:** Türkçe karakterler kullanmayın (ö→o, ü→u, ş→s, ç→c)
+
+---
+
+## Ay Dosyasını Düzenleme
+
+Her ay dosyası şu yapıya sahiptir:
 
 ```json
 {
-  "sehir": "Çanakkale",        // Şehir adınızı yazın
-  "ay": "Şubat",               // Ay adı (Ocak, Şubat, Mart, vb.)
-  "yil": 2026,                 // Yıl
-  "ayinIlkGunu": 7,            // Ayın 1'i hangi gün? (aşağıdaki tabloya bakın)
-  "ayinGunSayisi": 28,         // Ayda kaç gün var? (28, 29, 30 veya 31)
+  "sehir": "Çanakkale",
+  "ay": "Mart",
+  "yil": 2026,
+  "ayinIlkGunu": 7,
+  "ayinGunSayisi": 31,
   "footer": "Ahbap Çanakkale Gönüllüleri",
   "slogan": "Sevginin ve gerçeğin peşindeyiz",
-  "pdfDosyasi": "takvim.pdf",  // PDF dosyanızın adı (opsiyonel)
-  "konum": "Çanakkale"         // Takvim etkinlikleri için konum
+  "pdfDosyasi": "mart-takvim.pdf",
+  "konum": "Çanakkale",
+  "ozelGunler": [
+    {
+      "gun": 8,
+      "tur": "ozel",
+      "baslik": "Kadınlar Günü",
+      "emoji": "👩",
+      "renk": "#e91e63"
+    }
+  ],
+  "etkinlikler": [
+    {
+      "id": "piknik",
+      "gun": 15,
+      "icon": "🧺",
+      "baslik": "Bahar Pikniği",
+      "kisa": "Doğayla iç içe bir gün",
+      "detay": "Aileler ve çocuklarla birlikte parkta piknik yapacağız.",
+      "gif": "https://media.giphy.com/..."
+    }
+  ]
 }
 ```
 
@@ -47,43 +88,104 @@ Bu takvim sistemi, farklı Ahbap şehir gruplarının kolayca kullanabilmesi iç
 
 ---
 
-## Etkinlik Ekleme
+## Özel Günler Ekleme
 
-`etkinlikler` dizisine yeni etkinlikler ekleyebilirsiniz:
+Resmi tatiller, özel günler vb. için `ozelGunler` dizisini kullanın:
 
 ```json
-"etkinlikler": [
+"ozelGunler": [
   {
-    "id": "piknik",                    // Benzersiz bir id (Türkçe karakter kullanmayın)
-    "gun": 15,                         // Ayın kaçında?
-    "icon": "🧺",                      // Emoji (takvimde görünür)
-    "baslik": "Bahar Pikniği",         // Etkinlik başlığı
-    "kisa": "Doğayla iç içe bir gün",  // Takvimde görünen kısa açıklama
-    "detay": "Aileler ve çocuklarla birlikte parkta piknik yapacağız. Herkes yanında yiyecek getirebilir.",
-    "gif": "https://media.giphy.com/..."  // Opsiyonel: Detay sayfasında görünecek GIF
+    "gun": 23,
+    "tur": "resmi",
+    "baslik": "23 Nisan",
+    "emoji": "🎈",
+    "renk": "#e74c3c"
+  },
+  {
+    "gun": 14,
+    "tur": "ozel",
+    "baslik": "Sevgililer Günü",
+    "emoji": "💕",
+    "renk": "#ff6b9d"
   }
 ]
 ```
 
-### Etkinlik Silme
+**Özellikler:**
+- `tur`: "resmi" veya "ozel"
+- `renk`: HTML renk kodu (hex format)
+- Takvimde sağ üst köşede ince italic yazı olarak görünür
+- Mobilde sadece emoji, tablette kısaltma, masaüstünde tam metin gösterilir
 
-Silmek istediğiniz etkinliğin tüm satırlarını (süslü parantezler dahil) silin.
+---
 
-### Etkinlik Düzenleme
+## Etkinlik Ekleme
 
-İlgili alanları değiştirin. Örneğin:
-- Tarih değiştirmek için `"gun"` değerini değiştirin
-- Açıklama değiştirmek için `"detay"` değerini değiştirin
+```json
+"etkinlikler": [
+  {
+    "id": "piknik",
+    "gun": 15,
+    "icon": "🧺",
+    "baslik": "Bahar Pikniği",
+    "kisa": "Doğayla iç içe bir gün",
+    "detay": "Aileler ve çocuklarla birlikte parkta piknik yapacağız. Herkes yanında yiyecek getirebilir.",
+    "gif": "https://media.giphy.com/..."
+  }
+]
+```
+
+**Alanlar:**
+- `id`: Benzersiz kimlik (Türkçe karakter yok)
+- `gun`: Ayın kaçıncı günü
+- `icon`: Emoji
+- `baslik`: Etkinlik adı
+- `kisa`: Takvimde görünen kısa açıklama
+- `detay`: Modal'da görünen detaylı açıklama (çoklu satır için `\n` kullanın)
+- `gif`: Opsiyonel - Giphy veya benzeri GIF linki
 
 ---
 
 ## PDF Dosyası
 
-Takvimin PDF versiyonunu eklemek isterseniz:
-1. PDF dosyanızı ana klasöre yükleyin
-2. `config.json`'da `"pdfDosyasi"` alanına dosya adını yazın
+Her ay için farklı PDF ekleyebilirsiniz:
 
-PDF istemiyorsanız, HTML'den PDF butonunu kaldırabilirsiniz.
+1. PDF dosyanızı ana klasöre yükleyin (örn: `mart-takvim.pdf`)
+2. Ay dosyasında `"pdfDosyasi"` alanına yazın
+3. PDF buton otomatik görünür
+
+PDF yoksa: `"pdfDosyasi": ""`
+
+---
+
+## Yeni Ay Ekleme
+
+1. `data/` klasöründe yeni dosya oluşturun: `2026-nisan.json`
+2. Mevcut bir aydan kopyalayıp düzenleyin
+3. Ay bilgilerini güncelleyin
+4. Etkinlikleri ekleyin
+5. Takvim otomatik olarak bu ayı bulup gösterecek
+
+---
+
+## Dinamik Özellikler
+
+### Otomatik Ay Açma
+- Takvim bugünün tarihine göre otomatik olarak ilgili ayı açar
+- URL'de `?ay=2026-mart` parametresi ile istediğiniz ayı açabilirsiniz
+
+### Ay Arası Geçiş
+- Ok tuşları ile aylar arası geçiş yapın
+- Son satırda bir sonraki ayın ilk günleri otomatik gösterilir (etkinlik varsa)
+
+### Responsive Tasarım
+- Masaüstü: Tam detaylar
+- Tablet: Orta seviye detay
+- Mobil: Optimize edilmiş görünüm
+
+### Satır Optimizasyonu
+- Takvim sadece gerekli satırları gösterir
+- Nisan gibi kısa aylar 5 satır, Mart gibi uzun aylar 6 satır
 
 ---
 
@@ -109,14 +211,15 @@ PDF istemiyorsanız, HTML'den PDF butonunu kaldırabilirsiniz.
 | El işi/Örgü | 🧶 🪡 ✂️ |
 | Oyun/Eğlence | 🎮 🎲 🎯 |
 | Yemek | 🍽️ 🥘 ☕ |
-| Doğa/Çevre | 🌳 🌻 ♻️ |
+| Doğa/Çevre | 🌳 🌻 ♻️ 🌱 |
 | Müzik | 🎵 🎸 🎤 |
 | Spor | ⚽ 🏃 🚴 |
 | Eğitim | 🎓 ✏️ 💡 |
+| Özel Günler | 💕 🎈 🌙 🎭 👩 |
 
 ---
 
-## Örnek: Çanakkale için config.json
+## Örnek: Tam Bir Ay Dosyası
 
 ```json
 {
@@ -129,18 +232,34 @@ PDF istemiyorsanız, HTML'den PDF butonunu kaldırabilirsiniz.
   "slogan": "Sevginin ve gerçeğin peşindeyiz",
   "pdfDosyasi": "mart-takvim.pdf",
   "konum": "Çanakkale",
+  "ozelGunler": [
+    {
+      "gun": 8,
+      "tur": "ozel",
+      "baslik": "Kadınlar Günü",
+      "emoji": "👩",
+      "renk": "#e91e63"
+    },
+    {
+      "gun": 21,
+      "tur": "resmi",
+      "baslik": "Nevruz Bayramı",
+      "emoji": "🌸",
+      "renk": "#4caf50"
+    }
+  ],
   "etkinlikler": [
     {
-      "id": "cevretemizlik",
+      "id": "temizlik",
       "gun": 7,
       "icon": "🌳",
       "baslik": "Çevre Temizliği",
       "kisa": "Sahillerimizi temizleyelim",
-      "detay": "Çanakkale sahillerinde çevre temizliği yapacağız. Eldiven ve poşetler bizden!",
-      "gif": ""
+      "detay": "Çanakkale sahillerinde çevre temizliği yapacağız. Eldiven ve poşetler bizden!\n\nBuluşma: 10:00 Sahil",
+      "gif": "https://media.giphy.com/media/..."
     },
     {
-      "id": "cocuketkinlik",
+      "id": "cocuk",
       "gun": 14,
       "icon": "🎨",
       "baslik": "Çocuklarla Resim",
@@ -154,11 +273,39 @@ PDF istemiyorsanız, HTML'den PDF butonunu kaldırabilirsiniz.
 
 ---
 
+## İpuçları
+
+1. **Detaylı Açıklamalar:** `detay` alanında `\n` kullanarak satır atlayabilirsiniz
+2. **GIF Seçimi:** Giphy'den GIF seçerken "Share" → "Copy GIF Link" kullanın
+3. **Renk Seçimi:** HTML renk kodları için [colorhunt.co](https://colorhunt.co) kullanabilirsiniz
+4. **Yedekleme:** Her değişiklikten önce dosyanızı yedekleyin
+5. **Test Etme:** Değişiklikten sonra mutlaka sitenizi kontrol edin
+
+---
+
+## Sorun Giderme
+
+### Takvim görünmüyor
+- JSON dosya adını kontrol edin (Türkçe karakter var mı?)
+- JSON formatı doğru mu? (virgüller, tırnaklar)
+- Konsol hatalarını kontrol edin (F12)
+
+### Etkinlik görünmüyor
+- `gun` değeri doğru mu?
+- `etkinlikler` dizisi içinde mi?
+- `id` benzersiz mi?
+
+### PDF açılmıyor
+- Dosya adı JSON'daki ile aynı mı?
+- PDF dosyası yüklendi mi?
+
+---
+
 ## Yardım
 
 Sorularınız için:
 - Ahbap Tekirdağ ekibine ulaşın
-- GitHub'da issue açın
+- GitHub'da issue açın: [github.com/ahbap-tekirdag/etkinlik-takvimi](https://github.com/ahbap-tekirdag/etkinlik-takvimi)
 
 ---
 
