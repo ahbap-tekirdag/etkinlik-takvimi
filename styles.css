@@ -104,8 +104,12 @@ body {
 .header-text h1 { font-size: 1rem; font-weight: 600; color: var(--text-dark); line-height: 1.2; }
 .header-text p { font-size: 0.7rem; color: var(--text-medium); font-weight: 400; }
 .month-badge { background: var(--ahbap-green); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
-.header-right { display: flex; align-items: center; gap: 10px; }
-.download-btn { background: var(--ahbap-green); color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s ease; font-family: inherit; }
+.header-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.month-selector { display: flex; gap: 8px; background: var(--white); padding: 4px; border-radius: 20px; box-shadow: var(--shadow); }
+.month-link { text-decoration: none; color: var(--text-dark); padding: 6px 14px; border-radius: 16px; font-weight: 500; font-size: 0.8rem; transition: all 0.2s ease; }
+.month-link:hover { background: var(--ahbap-green-pale); color: var(--ahbap-green-dark); }
+.month-link.active { background: var(--ahbap-green); color: white; }
+.download-btn { background: var(--ahbap-green); color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s ease; font-family: inherit; text-decoration: none; }
 .download-btn:hover { background: var(--ahbap-green-dark); transform: scale(1.02); }
 .download-btn svg { width: 16px; height: 16px; }
 

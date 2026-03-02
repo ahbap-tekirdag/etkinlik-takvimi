@@ -1,0 +1,58 @@
+{
+  "sehir": "Tekirdağ",
+  "ay": "Şubat",
+  "yil": 2026,
+  "ayinIlkGunu": 7,
+  "ayinGunSayisi": 28,
+  "footer": "Ahbap Tekirdağ Gönüllüleri",
+  "slogan": "Sevginin ve gerçeğin peşindeyiz",
+  "pdfDosyasi": "subat-takvim.pdf",
+  "konum": "Tekirdağ",
+  "etkinlikler": [
+    {
+      "id": "kitap",
+      "gun": 1,
+      "icon": "📚",
+      "baslik": "Kitap Arkadaşım",
+      "kisa": "Küçük Prens ile yolculuğa başlıyoruz",
+      "detay": "Küçük Prens kitabını birlikte okuyacak ve üzerine keyifli bir sohbet gerçekleştireceğiz. Kitabın bize verdiği mesajları konuşacak ve paylaşımlarda bulunacağız.",
+      "gif": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDA3ZG5nNHE0ZTFsdWl3d2QzZnBrOG14NHQ5N2xkNmFkNHM5bjV5aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/15epGYaUWf2dkMT9ro/giphy.gif"
+    },
+    {
+      "id": "gonullu",
+      "gun": 8,
+      "icon": "🤝",
+      "baslik": "Gönüllü Tanışma & 6 Şubat Depremini Anma",
+      "kisa": "Yeni Gönüllülere Sunum ve Depremi Anma",
+      "detay": "Yeni gönüllülerimize Ahbap'ı tanıtan bir sunum yapacağız. Ardından 6 Şubat depreminde hayatını kaybedenleri anacağız ve AFAD'ın bizlere verdiği eğitim videosunu izleyeceğiz.",
+      "gif": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmRkeHViM3Jsa2FrMW9kMXo2NzZpeWk4aGF3a21qcWdzemIxYWk3aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cHw1sFUAfZcZfcLjq9/giphy.gif"
+    },
+    {
+      "id": "kedi",
+      "gun": 15,
+      "icon": "🐱",
+      "baslik": "Kediler Günü",
+      "kisa": "Patili Dostlarımıza Yuva & Mama",
+      "detay": "Geri dönüşüm malzemeleri kullanarak sokak hayvanlarına yuva yapacağız. Ayrıca ihtiyaç olan bölgelerde mama dağıtımı gerçekleştireceğiz.",
+      "gif": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExanV6ajc1cXZheWx5anYzYnJvMDlwcXJnZ2lncGNmcGFoMHBzcDRhcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/W0VuY0dTxH9L6vLUJ2/giphy.gif"
+    },
+    {
+      "id": "orgu",
+      "gun": 21,
+      "icon": "🧶",
+      "baslik": "Sevgiye İlmek",
+      "kisa": "Her ilmek bir kalbe dokunsun diye buluşuyoruz.",
+      "detay": "Ramazan ayında iftar sonrası bir araya gelip çay eşliğinde örgü öreceğiz. Örülen ürünler ihtiyaç sahibi çocuklara gönderilecek.",
+      "gif": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmF0NnQ5NGI0c2Zmem40dG8wcWUxeHkwMHI0bzhrcmE3YmRvdzZhdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/S3sljkpl8p0CsGL0W5/giphy.gif"
+    },
+    {
+      "id": "quiz",
+      "gun": 28,
+      "icon": "🎮",
+      "baslik": "Quiz Night",
+      "kisa": "Kahkaha, takım ruhu ve bol eğlencenin bir araya geldiği sosyal buluşma.",
+      "detay": "Emojilerle şarkı tahmin edeceğiz, bilmeceler çözeceğiz ve eğlenceli oyunlarla dolu bir gece geçireceğiz. Hep birlikte eğleneceğiz!",
+      "gif": "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnhlY29iOGV2eW0zbGxyN2VzbzRlYTBqMjVvemI2OHgzeDdjNTRoYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/INzNh7BaMdc4Umxmvq/giphy.gif"
+    }
+  ]
+}

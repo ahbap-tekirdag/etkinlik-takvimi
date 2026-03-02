@@ -6,15 +6,30 @@ let currentEventId = null;
 // Gün isimleri
 const gunIsimleri = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'];
 
+// URL parametresinden ay bilgisini al
+function getAyFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const ay = urlParams.get('ay');
+    // Varsayılan olarak şubat
+    return ay || '2026-subat';
+}
+
 // Config dosyasını yükle
 async function loadConfig() {
     try {
-        const response = await fetch('config.json');
+        const ay = getAyFromUrl();
+        const response = await fetch(`data/${ay}.json`);
+        if (!response.ok) {
+            throw new Error(`${ay}.json bulunamadı`);
+        }
         config = await response.json();
         initializeApp();
     } catch (error) {
         console.error('Config yüklenemedi:', error);
-        document.getElementById('calendarDays').innerHTML = '<p style="color: red; padding: 20px;">config.json dosyası yüklenemedi!</p>';
+        const gridElement = document.getElementById('calendar-grid');
+        if (gridElement) {
+            gridElement.innerHTML = '<p style="color: red; padding: 20px; grid-column: 1/-1;">Config dosyası yüklenemedi! URL parametresini kontrol edin: ?ay=2026-mart</p>';
+        }
     }
 }
 
@@ -30,10 +45,24 @@ function initializeApp() {
     // Ay badge
     document.getElementById('monthBadge').textContent = `${config.ay} ${config.yil}`;
 
+    // Aktif ay seçicisini highlight et
+    const currentAy = getAyFromUrl();
+    document.querySelectorAll('.month-link').forEach(link => {
+        const linkAy = new URL(link.href).searchParams.get('ay');
+        if (linkAy === currentAy) {
+            link.classList.add('active');
+        }
+    });
+
     // PDF link
     const pdfLink = document.getElementById('pdfLink');
-    pdfLink.href = config.pdfDosyasi;
-    pdfLink.download = `Ahbap-${config.ay}-${config.yil}-Takvim.pdf`;
+    if (config.pdfDosyasi) {
+        pdfLink.href = config.pdfDosyasi;
+        pdfLink.download = `Ahbap-${config.ay}-${config.yil}-Takvim.pdf`;
+        pdfLink.style.display = 'flex';
+    } else {
+        pdfLink.style.display = 'none';
+    }
 
     // Footer
     document.getElementById('footerText').textContent = config.footer;

@@ -1,0 +1,40 @@
+{
+  "sehir": "Tekirdağ",
+  "ay": "Mart",
+  "yil": 2026,
+  "ayinIlkGunu": 7,
+  "ayinGunSayisi": 31,
+  "footer": "Ahbap Tekirdağ Gönüllüleri",
+  "slogan": "Sevginin ve gerçeğin peşindeyiz",
+  "pdfDosyasi": "",
+  "konum": "Tekirdağ",
+  "etkinlikler": [
+    {
+      "id": "martenica",
+      "gun": 8,
+      "icon": "🌸",
+      "baslik": "Mart Bileklikleri Atölyesi",
+      "kisa": "8 Mart Kadınlar Günü'ne özel Martenitsa yapıyoruz",
+      "detay": "8 Mart Dünya Kadınlar Günü'ne özel bir araya gelip geleneksel Mart bilekliklerini (Martenitsa/Marteniçka) el emeğimizle yapacağız. Yaptığımız bileklikleri kadınlara hediye edeceğiz. Birlikte keyifli bir atölye deneyimi yaşayacağız.",
+      "gif": "https://media.giphy.com/media/26BRpLTzQJiPyLnuo/giphy.gif"
+    },
+    {
+      "id": "cicek",
+      "gun": 15,
+      "icon": "🌱",
+      "baslik": "Çiçek Ekimi & Yemek",
+      "kisa": "Dünya Çiçek Ekimi Günü'ne özel tohum değiş tokuşu",
+      "detay": "Dünya Çiçek Ekimi Günü'ne ithafen bir araya gelip çiçek ekimi yapacağız. Herkes kendi tohumunu ve saksısını getirecek, birlikte ekeceğiz. Ardından saksılarımızı birbirimizle değiş tokuş yaparak herkes birbirine çiçek hediye etmiş olacak. Sürpriz çiçeklerimizi büyüteceğiz! Etkinlik sonrası birlikte akşam yemeği yiyeceğiz.",
+      "gif": "https://media.giphy.com/media/kGi8FPpIvv6IE/giphy.gif"
+    },
+    {
+      "id": "tiyatro",
+      "gun": 28,
+      "icon": "🎭",
+      "baslik": "Tiyatro Gecesi",
+      "kisa": "Dünya Tiyatro Günü'ne özel tiyatro izlemeye gidiyoruz",
+      "detay": "27 Mart Dünya Tiyatro Günü'ne özel olarak birlikte tiyatro izlemeye gideceğiz. Not: Tiyatro oyununun tarihine göre etkinlik günü değişebilir, kesin tarih duyurulacaktır.",
+      "gif": "https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif"
+    }
+  ]
+}
